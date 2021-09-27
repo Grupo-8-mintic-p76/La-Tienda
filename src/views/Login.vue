@@ -44,7 +44,7 @@ export default {
       this.$router.push("/principal");
     },
     git(){
-        window.open("https://github.com/Grupo-8-mintic-p76/LA_TIENDA");
+        window.open("https://github.com/Grupo-8-mintic-p76/La-Tienda.git");
         
     }
   },
