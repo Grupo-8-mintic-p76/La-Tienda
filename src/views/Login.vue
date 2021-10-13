@@ -11,7 +11,7 @@
           elevation="9"
           large
           x-large
-          @click="login"
+          @click="catalogo"
           >Ingresar</v-btn
         >
       </tr>
@@ -26,6 +26,7 @@
           </v-card-text>
           <v-card-actions>
             <v-btn text color="deep-purple accent-4" @click="git"> GITHUB </v-btn>
+            <v-btn text color="deep-purple accent-4" @click="intro">  ACERCA DE... </v-btn>
           </v-card-actions>
         </v-card>
       </tr>
@@ -39,14 +40,18 @@ export default {
     return {};
   },
   methods: {
-    login() {
-      console.log("Ingresando al catálogo");
-      this.$router.push("/principal");
+    catalogo() {
+      console.log("Ingresando al aplicativo");
+      this.$router.push("/catalogo");
     },
     git(){
         window.open("https://github.com/Grupo-8-mintic-p76/La-Tienda.git");
         
-    }
+    },
+    intro() {
+      console.log("Ingresando al intro");
+      this.$router.push("/intro");
+    },
   },
 };
 </script>

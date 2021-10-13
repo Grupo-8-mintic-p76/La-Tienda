@@ -11,10 +11,16 @@ const routes = [
     component: Login
   },
   {
-    path: '/principal',
-    name: 'Principal',
+    path: '/intro',
+    name: 'Intro',
 
-    component: () => import('../views/Principal.vue')
+    component: () => import('../views/Intro.vue')
+  },
+  {
+    path: '/catalogo',
+    name: 'Catalogo',
+
+    component: () => import('../views/Catalogo.vue')
   }
 ]
 

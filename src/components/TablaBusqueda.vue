@@ -11,14 +11,19 @@
     </v-card-title>
     <!--AQUI SE CAMBIA EL item-key c_digo_dane_del_municipio POR EL VALUE ID DEL API  A USAR-->
     <v-data-table
-      v-model="selected"
       :headers="headers"
       :items="productos"
       :search="search"
       item-key="c_digo_dane_del_municipio"
-      show-select
       class="elevation-1" 
     >
+
+    <template v-slot:[`item.seleccionar`]="{ item }">
+        <v-simple-checkbox
+          v-model="item.seleccionar"
+          color="green"
+        ></v-simple-checkbox>
+      </template>
     </v-data-table>
   </v-card>
 </template>
@@ -29,9 +34,7 @@ export default {
   data() {
     return {
       search: "",
-      selected: [],
       headers:[
-    
         {
           text: "ID",
           align: "start",
@@ -39,9 +42,10 @@ export default {
           //AQUI SE CAMBIA EL VALUE c_digo_dane_del_municipio POR EL VALUE ID DEL API  A USAR
           value: "c_digo_dane_del_municipio",
         },
-        { text: "Nombre del Producto", 
-        value: "municipio", 
-        sortable: false },
+        { 
+          text: "Nombre del Producto", 
+          value: "municipio", 
+          sortable: false },
         {
           text: "Cantidad",
           value: "c_digo_dane_del_departamento",
@@ -54,10 +58,18 @@ export default {
           filterable: false,
           sortable: false,
         },
-        { text: "Imagen", 
-        value: "region", 
-        filterable: false, 
-        sortable: false },
+        { 
+          text: "Imagen", 
+          value: "region", 
+          filterable: false, 
+          sortable: false,
+        },
+        { 
+          text: "Seleccionar", 
+          value: "seleccionar", 
+          filterable: false, 
+          sortable: false,
+        }
       ],
     };
   },
@@ -74,5 +86,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
